@@ -1,0 +1,58 @@
+:host {
+    height: 10%;
+    width: 100%;
+    background-color: rgb(39, 43, 48);
+    animation: pulse 9s infinite;
+    display: grid;
+    justify-content: center;
+    align-content: center;
+}
+
+@keyframes pulse {
+    0% {
+        background-color: rgb(39, 43, 48);
+    }
+    50% {
+        background-color: rgb(26, 16, 51);
+    }
+    100% {
+        background-color: rgb(39, 43, 48);
+    }
+}
+
+:host .header-menu {
+    display: none;
+    text-align: center;
+}
+
+.block {
+    text-decoration: none;
+    border-bottom: 1px solid rgb(255, 208, 0);
+    background-color: rgba(67, 74, 82, 0);
+    transition: all 0.8s ease;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+.block a {
+    font-size: 19px;
+    color: aliceblue;
+}
+
+.block:hover {
+    background-color: rgb(224, 183, 0);
+    cursor: pointer;
+    box-shadow: 1px 1px 5px 2px orange;
+}
+
+@media only screen and (max-width: 650px) {
+    :host .header-menu {
+        display: grid;
+        grid-template-rows: 1fr;
+        grid-template-columns: repeat(3, 1fr);
+        grid-gap: 5%;
+    }
+}
+

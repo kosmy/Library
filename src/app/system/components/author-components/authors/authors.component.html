@@ -1,0 +1,36 @@
+<div *ngIf="message" class="alert alert-warning">
+  {{message}}
+</div>
+<div class="container" *ngIf="!empty">
+  <h2>Authors</h2>
+  <div class="authors" *ngIf="isLoaded">
+    <table id="tableSort" mdbTable class="table table-hover table-dark">
+      <thead>
+        <tr>
+          <th *ngFor="let head of headElements; let i = index" aria-controls="tableSort" scope="col"
+          [mdbTableSort]="authors" [sortBy]="headElements[i]">
+          {{head | titlecase}}
+          <img src="../../../../../assets/arrows.png">
+        </th>
+          <th><button (click)="authorCreate()" class="btn btn-success">Add New Author</button></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let author of authors, let i = index">
+          <td scope="row">{{author.name}} {{author.surname}}</td>
+          <td class="birthday-td">{{author.birthday}}</td>
+          <td>
+            <button (click)="addBook(author)" class="btn btn-primary">Add Book</button>
+            <button (click)="authorDetails(author)" class="btn btn-info">More info</button>
+            <button (click)="authorEdit(author)" class="btn btn-warning">Edit</button>
+            <button (click)="authorDelete(author)" class="btn btn-danger">Delete</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+<div class="empty" *ngIf="empty">
+  <h4>The List of Authors is Empty</h4>
+  <button (click)="authorCreate()" class="btn btn-success">Add New Author</button>
+</div>

@@ -1,0 +1,8 @@
+<div *ngIf="isLoaded" class="container-fluid">
+  <h2>Details about {{currentBook.name}}</h2>
+    <h6><b>Author:</b> {{currentBook.author}}</h6>
+    <h6><b>Title:</b> {{currentBook.name}}</h6>
+    <h6><b>Pages:</b> {{currentBook.pages}}</h6>
+    <h6><b>Genre:</b> {{currentBook.genre}}</h6>
+    <button class="btn btn-primary mt-2" (click)="returnToBooks()">Back to All Books</button>  
+  </div>

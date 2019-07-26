@@ -1,0 +1,12 @@
+<div *ngIf="isLoaded" class="container">
+  <div *ngIf="message" class="alert alert-success">
+    {{message}}
+  </div>
+
+  <h2>You are going to delete this Genre: {{currentGenre.name}}</h2>
+ 
+  <h4>Are you sure you want to delete this genre?</h4>
+
+  <button class="btn btn-primary" (click)="returnToList()"> Cancel</button>
+  <button class="btn btn-danger" (click)="deleteGenre()"> Delete current Genre</button>
+</div>

@@ -1,0 +1,43 @@
+:host {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.container {
+    margin-top: 2%;
+    width: 40%;
+    color: aliceblue;
+}
+
+.btn-warning {
+    width: 120px;
+}
+
+.form-group input {
+    text-transform: capitalize;
+}
+
+.btn-success {
+    width: 120px;
+    margin-left: 1%;
+}
+
+.alert-danger {
+    padding: 0.8%;
+}
+
+.alert-success {
+    padding: 1.5%;
+}
+.alert-warning {
+    padding: 0.8%;
+}
+@media only screen and (max-width: 801px) {
+    .btn-success  {
+        margin-left: 0%;
+    }
+    .btn-warning  {
+        margin-bottom: 1%;
+    }
+}

@@ -1,0 +1,13 @@
+<div *ngIf="message" class="alert alert-warning">
+  {{message}}
+</div>
+<div *ngIf="isLoaded" class="container-fluid">
+  <h2>Details about {{currentAuthor.name}} {{currentAuthor.surname}}</h2>
+    <h6><b>Name:</b> {{currentAuthor.name}}</h6>
+    <h6><b>Surname:</b> {{currentAuthor.surname}}</h6>
+    <h6><b>Father's Name:</b> {{currentAuthor.fName}}</h6>
+    <h6><b>Birthday:</b> {{currentAuthor.birthday}}</h6>
+    <h6><b>Books:</b> {{currentAuthor.books}}</h6>
+    <button class="btn btn-primary" (click)="returnToAuthors()">Back to All Authors</button>  
+    <button class="btn btn-success" (click)="addBook(currentAuthor)">Add new Book</button>
+  </div>

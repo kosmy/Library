@@ -1,0 +1,30 @@
+<div class="container" *ngIf="!empty">
+  <h2>Genres</h2>
+  <div class="genres" *ngIf="isLoaded">
+    <table id="tableSort" mdbTable class="table table-hover table-dark">
+      <thead>
+        <tr>
+          <th *ngFor="let head of headElements; let i = index" aria-controls="tableSort" scope="col"
+          [mdbTableSort]="genres" [sortBy]="headElements[i]">
+            {{head | titlecase}}
+            <img src="../../../../../assets/arrows.png">
+          </th>
+          <th><button (click)="genreCreate()" class="btn btn-success">Create</button></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let genre of genres, let i = index">
+          <td>{{genre.name}}</td>
+          <td>
+            <button (click)="genreEdit(genre)" class="btn btn-warning">Edit</button>
+            <button (click)="genreDelete(genre)" class="btn btn-danger">Delete</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+<div class="empty" *ngIf="empty">
+  <h4>The List of Genres is Empty</h4>
+  <button (click)="genreCreate()" class="btn btn-success">Add New Genre</button>
+</div>

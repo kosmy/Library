@@ -1,0 +1,43 @@
+:host {
+    width: 15%;
+    background-color: rgb(63, 68, 75);
+    position: relative;
+    transition: all 0.4s ease;
+}
+nav .menu {
+    display: grid;
+    grid-template-rows: repeat(4, 1fr);
+    grid-template-columns: 1fr;
+    grid-gap: 2px;
+}
+.block {
+    text-decoration:none;
+    text-align: center;
+    border-bottom: 1px solid rgb(255, 208, 0);
+    padding-top: 15px;
+    padding-bottom: 15px;
+    height: auto;
+    background-color: rgba(67, 74, 82, 0);
+    transition: all 0.8s ease;
+}
+a:hover {
+    text-decoration: none;
+}
+.block a {
+    font-size: 20px;
+    color: aliceblue;
+}
+.block:hover {
+    background-color: rgb(255, 208, 0);
+    cursor: pointer;
+    box-shadow: 1px 1px 5px 2px orange;
+}
+:host:hover {
+    background-color: rgb(70, 75, 80);
+
+}
+@media only screen and (max-width: 650px) {
+    :host {
+        display: none;
+    }
+}

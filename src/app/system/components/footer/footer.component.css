@@ -1,0 +1,14 @@
+:host {
+    height: 10%;
+    width: 100%;
+    background-color: rgb(39, 43, 48);
+    text-align: end;
+    display: flex;
+    flex-direction: row-reverse;
+}
+:host p {
+    margin-right: 3%;
+    color: aliceblue;
+    font-size: 12px;
+    align-self: center;
+}

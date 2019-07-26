@@ -1,0 +1,74 @@
+<div class="container" *ngIf="isLoaded">
+  <h2 *ngIf="currentAuthor.id">Edit Author</h2>
+  <h2 *ngIf="!currentAuthor.id">Add New Author</h2>
+  <form [formGroup]="authorForm" (ngSubmit)="onSubmit(authorForm)">
+    <div *ngIf="message" class="alert alert-success">
+      {{message}}
+    </div>
+    <div class="form-group">
+      <label for="name">Name</label>
+      <input id="name" type="text" class="form-control" formControlName="name">
+      <div *ngIf="checkError('name', 'required')" class="alert alert-danger">
+        Name required
+      </div>
+      <div *ngIf="authorForm.get('name').hasError('pattern') && 
+      authorForm.get('name').touched" class="alert alert-danger">
+        The name is incorrect
+      </div>
+      <div *ngIf="authorForm.get('name').hasError('minlength') && 
+      authorForm.get('name').touched" class="alert alert-danger">
+        Min length is 2 letters
+      </div>
+      <div *ngIf="authorForm.get('name').hasError('maxlength') && 
+      authorForm.get('name').touched" class="alert alert-danger">
+        Max length is 15 letters
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="surname">Surname</label>
+      <input id="surname" type="text" class="form-control" formControlName="surname">
+      <div *ngIf="checkError('surname', 'required')" class="alert alert-danger">
+        Surname required
+      </div>
+      <div *ngIf="authorForm.get('surname').hasError('pattern') && 
+      authorForm.get('surname').touched" class="alert alert-danger">
+        This surname is incorrect
+      </div>
+      <div *ngIf="authorForm.get('surname').hasError('minlength') && 
+      authorForm.get('surname').touched" class="alert alert-danger">
+        Min length is 2 letters
+      </div>
+      <div *ngIf="authorForm.get('surname').hasError('maxlength') && 
+      authorForm.get('surname').touched" class="alert alert-danger">
+        Max length is 15 letters
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="fName">Father's Name</label>
+      <input id="fName" type="text" class="form-control" formControlName="fName">
+      <div *ngIf="authorForm.get('fName').hasError('pattern') && 
+      authorForm.get('fName').touched" class="alert alert-danger">
+        This father's name is incorrect
+      </div>
+      <div *ngIf="authorForm.get('fName').hasError('minlength') && 
+      authorForm.get('fName').touched" class="alert alert-danger">
+        Min length is 2 letters
+      </div>
+      <div *ngIf="authorForm.get('fName').hasError('maxlength') && 
+      authorForm.get('fName').touched" class="alert alert-danger">
+        Max length is 15 letters
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="birthday">Birthday</label>
+      <input id="birthday" type="date" class="form-control" formControlName="birthday">
+      <div *ngIf="checkError('birthday', 'required')" class="alert alert-danger">
+        Birthday required.
+      </div>
+    </div>
+    <div class="buttons">
+      <input type="button" class="btn btn-warning" (click)="returnToList()" value="Cancel">
+      <input type="submit" class="btn btn-success" value="Save" [disabled]="authorForm.invalid">
+    </div>
+  </form>
+</div>

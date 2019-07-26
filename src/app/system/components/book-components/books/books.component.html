@@ -1,0 +1,44 @@
+<div *ngIf="message" class="alert alert-warning">
+  {{message}}
+</div>
+<div class="container" *ngIf="!empty">
+  <form class="form-inline">
+    <h2>Books</h2>
+    <input name="findBook" #myInput type="text" class="form-control" placeholder="Find book"
+       (input)="filterItem(myInput.value)">
+  </form>
+
+
+  <div class="books" *ngIf="isLoaded">
+    <table id="tableSort" mdbTable class="table table-dark table-hover">
+      <thead>
+        <tr>
+          <th *ngFor="let head of headElements; let i = index" aria-controls="tableSort" scope="col"
+            [mdbTableSort]="books" [sortBy]="headElements[i]">
+            {{head | titlecase}}
+            <img src="../../../../../assets/arrows.png">
+          </th>
+          <th>
+            <button (click)="bookCreate()" class="btn btn-success">Add Book</button>
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let book of filteredBooks, let i = index">
+          <td scope="row">{{book.name}}</td>
+          <td>{{book.pages}}</td>
+          <td>{{book.genre}}</td>
+          <td>
+            <button (click)="bookDetails(book)" class="btn btn-info">More info</button>
+            <button (click)="bookEdit(book)" class="btn btn-warning">Edit</button>
+            <button (click)="bookDelete(book)" class="btn btn-danger">Delete</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+<div class="empty" *ngIf="empty">
+  <h4>The List of Books is Empty</h4>
+  <button (click)="bookCreate()" class="btn btn-success">Add New Book</button>
+</div>

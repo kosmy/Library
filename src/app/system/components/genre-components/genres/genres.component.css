@@ -1,0 +1,68 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    color: aliceblue;
+    margin-top: 2%;
+}
+
+table {
+    margin-top: 1%;
+    width: 80%;
+    text-align: center;
+    margin-left: 10%;
+}
+
+td button {
+    margin-right: 1%;
+    width: 100px;
+}
+
+th {
+    text-align: center;
+    cursor: pointer;
+}
+
+th button {
+    width: 200px;
+    margin-right: 2.5%;
+}
+
+h4 a {
+    text-decoration-color: rgb(255, 208, 0);
+    color: rgb(255, 208, 0);
+}
+
+.empty {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    color: aliceblue;
+    margin-top: 3%;
+}
+
+.empty button {
+    margin-top: 2%;
+    width: 25%;
+    align-self: center;
+}
+
+img {
+    height: 40%;
+}
+
+tbody tr:hover {
+    background-color: rgb(67, 73, 80);
+}
+
+@media only screen and (max-width: 503px) {
+    th button {
+        width: 100px;
+    }
+}
+
+@media only screen and (max-width: 1065px) {
+    td button {
+        margin-bottom: 2%;
+    }
+}
